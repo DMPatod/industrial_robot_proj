@@ -1,0 +1,10 @@
+<launch>
+    <param name="robot_description" command="cat $(find robot_description)/urdf/arm.urdf" />
+
+    <node name="rviz" pkg="rviz" type="rviz" />
+
+    <node name="joint_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <param name="use_gui" value="True" />
+        <remap from="/joint_states" to="/arm_robot/joint_states">
+    </node>
+</launch>
