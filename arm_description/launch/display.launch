@@ -1,7 +1,7 @@
 <launch>
 	<arg name="model" />
 	
-	<arg name="gui" default="False" />
+	<arg name="gui" default="True" />
 	
 	<param name="robot_description" textfile="$(find arm_description)/urdf/arm_description.urdf" />
 	
