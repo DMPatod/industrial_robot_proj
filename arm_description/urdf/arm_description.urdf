@@ -1,5 +1,5 @@
 <robot name="arm_description">
-	<link name="Base_Link">
+	<link name="base_link">
 		<inertial>
 			<origin xyz="0.0003064 0.0064691 0.00036833" rpy="0 0 0" />
 			<mass value="0.51132" />
@@ -8,7 +8,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="package://arm_description/meshes/Base_Link.STL" />
+				<mesh filename="package://arm_description/meshes/base_link.STL" />
 			</geometry>
 			<material name="">
 				<color rgba="0.79216 0.81961 0.93333 1" />
@@ -17,20 +17,20 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="package://arm_description/meshes/Base_Link.STL" />
+				<mesh filename="package://arm_description/meshes/base_link.STL" />
 			</geometry>
 		</collision>
 	</link>
-	<link name="Link_00">
+	<link name="link_00">
 		<inertial>
-			<origin xyz="2.9296E-05 0.057647 0.0080497" rpy="0 0 0" />
+			<origin xyz="2.9298E-05 0.057647 0.0080497" rpy="0 0 0" />
 			<mass value="0.91073" />
 			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="package://arm_description/meshes/Link_00.STL" />
+				<mesh filename="package://arm_description/meshes/link_00.STL" />
 			</geometry>
 			<material name="">
 				<color rgba="0.79216 0.81961 0.93333 1" />
@@ -39,26 +39,26 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="package://arm_description/meshes/Link_00.STL" />
+				<mesh filename="package://arm_description/meshes/link_00.STL" />
 			</geometry>
 		</collision>
 	</link>
-	<joint name="Base_to_00" type="continuous">
-		<origin xyz="0 0 0.035" rpy="1.5708 -6.3309E-17 -1.5878" />
-		<parent link="Base_Link" />
-		<child link="Link_00" />
+	<joint name="base_to_00" type="continuous">
+		<origin xyz="0 0 0.035" rpy="1.5708 -6.1219E-17 -1.5519" />
+		<parent link="base_link" />
+		<child link="link_00" />
 		<axis xyz="0 1 0" />
 	</joint>
-	<link name="Link_01">
+	<link name="link_01">
 		<inertial>
-			<origin xyz="0.051312 0.09726 -1.3797E-05" rpy="0 0 0" />
-			<mass value="1.5841" />
+			<origin xyz="0.049553 0.060376 -2.116E-05" rpy="0 0 0" />
+			<mass value="1.0247" />
 			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="package://arm_description/meshes/Link_01.STL" />
+				<mesh filename="package://arm_description/meshes/link_01.STL" />
 			</geometry>
 			<material name="">
 				<color rgba="0.79216 0.81961 0.93333 1" />
@@ -67,14 +67,42 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="package://arm_description/meshes/Link_01.STL" />
+				<mesh filename="package://arm_description/meshes/link_01.STL" />
 			</geometry>
 		</collision>
 	</link>
 	<joint name="00_to_01" type="continuous">
-		<origin xyz="0 0.07 0.078535" rpy="3.1384 -1.5708 0" />
-		<parent link="Link_00" />
-		<child link="Link_01" />
+		<origin xyz="0 0.07 0.080036" rpy="2.4677 -1.5708 0" />
+		<parent link="link_00" />
+		<child link="link_01" />
+		<axis xyz="-1 0 0" />
+	</joint>
+	<link name="link_02">
+		<inertial>
+			<origin xyz="0.049675 0.04972 3.3596E-05" rpy="0 0 0" />
+			<mass value="0.49537" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://arm_description/meshes/link_02.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.79216 0.81961 0.93333 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://arm_description/meshes/link_02.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="01_to_02" type="continuous">
+		<origin xyz="0 0.15 0" rpy="-1.7159 -9.3328E-16 3.1416" />
+		<parent link="link_01" />
+		<child link="link_02" />
 		<axis xyz="1 0 0" />
 	</joint>
 </robot>

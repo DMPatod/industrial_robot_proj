@@ -1,1 +1,1 @@
-controller_joint_names: ['Base_to_00', '00_to_01', ]
+controller_joint_names: ['base_to_00', '00_to_01', '01_to_02', ]
