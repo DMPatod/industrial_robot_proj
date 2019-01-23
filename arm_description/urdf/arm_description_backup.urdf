@@ -105,45 +105,4 @@
 		<child link="link_02" />
 		<axis xyz="1 0 0" />
 	</joint>
-
-		<!-- ros_control plugin -->
-	<gazebo>
-		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-			<robotNamespace>/arm_description</robotNamespace>
-		</plugin>
-	</gazebo>
-
-	<!-- Transmissions for ROS Control -->
-	<transmission name="tran1">
-		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="base_to_00">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-		</joint>
-		<actuator name="motor1">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-			<mechanicalReduction>1</mechanicalReduction>
-		</actuator>
-	</transmission>
-
-	<transmission name="tran2">
-		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="00_to_01">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-		</joint>
-		<actuator name="motor2">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-			<mechanicalReduction>1</mechanicalReduction>
-		</actuator>
-	</transmission>
-
-	<transmission name="tran3">
-		<type>transmission_interface/SimpleTransmission</type>
-		<joint name="01_to_02">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-		</joint>
-		<actuator name="motor3">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-			<mechanicalReduction>1</mechanicalReduction>
-		</actuator>
-	</transmission>
 </robot>
