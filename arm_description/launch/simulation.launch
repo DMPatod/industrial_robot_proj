@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <group ns="/arm">
+        <param name="arm_description" command="cat $(find arm_description)/urdf/arm_description.urdf" />
+
+        <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="False" output="screen" args="-urdf -param arm_description -model arm" />
+
+        <rosparam command="load" file="$(find arm_description)/config/joints_controllers.yaml" />
+
+        <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/arm" args="--namespace=/arm
+            joint_state_controller
+            joint1_position_controller
+            joint2_position_controller
+            joint3_position_controller
+            --timeout 60">
+        </node>
+
+    </group>
+</launch>

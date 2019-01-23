@@ -1,4 +1,4 @@
-<robot name="arm_description">
+<robot name="arm">
 	<link name="base_link">
 		<inertial>
 			<origin xyz="0.0003064 0.0064691 0.00036833" rpy="0 0 0" />
@@ -106,10 +106,10 @@
 		<axis xyz="1 0 0" />
 	</joint>
 
-		<!-- ros_control plugin -->
+	<!-- ros_control plugin -->
 	<gazebo>
 		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-			<robotNamespace>/arm_description</robotNamespace>
+			<robotNamespace>/arm</robotNamespace>
 		</plugin>
 	</gazebo>
 
