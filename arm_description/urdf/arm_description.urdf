@@ -1,4 +1,4 @@
-<robot name="arm_robot">
+<robot name="arm_model">
 	<link name="base_link">
 		<inertial>
 			<origin xyz="0.0003064 0.0064691 0.00036833" rpy="0 0 0" />
@@ -109,7 +109,7 @@
 	<!-- ros_control plugin -->
 	<gazebo>
 		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-			<robotNamespace>/arm_robot</robotNamespace>
+			<robotNamespace>/arm_model</robotNamespace>
 		</plugin>
 	</gazebo>
 
@@ -117,10 +117,10 @@
 	<transmission name="tran1">
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="base_to_00">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
 		</joint>
 		<actuator name="motor1">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
 			<mechanicalReduction>1</mechanicalReduction>
 		</actuator>
 	</transmission>
@@ -128,10 +128,10 @@
 	<transmission name="tran2">
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="00_to_01">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
 		</joint>
 		<actuator name="motor2">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
 			<mechanicalReduction>1</mechanicalReduction>
 		</actuator>
 	</transmission>
@@ -139,10 +139,10 @@
 	<transmission name="tran3">
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="01_to_02">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
 		</joint>
 		<actuator name="motor3">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			<hardwareInterface>EffortJointInterface</hardwareInterface>
 			<mechanicalReduction>1</mechanicalReduction>
 		</actuator>
 	</transmission>
