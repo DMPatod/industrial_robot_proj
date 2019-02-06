@@ -2,13 +2,16 @@
     <!-- Load controllers -->
     <rosparam command="load" file="$(find arm_description)/config/joints_controllers.yaml" />
 
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/arm_robot" args="
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/arm_model" args="
             joint_state_controller
             joint1_position_controller
             joint2_position_controller
             joint3_position_controller ">
     </node>
 
-</launch>
-
+    <!-- convert joint states to TF transforms -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <remap from="/joint_states" to="/arm_model/joint_states" />
+    </node>
     
+</launch>
