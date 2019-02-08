@@ -6,6 +6,7 @@
     <arg name="gui" default="true" />
     <arg name="headless" default="false" />
     <arg name="debug" default="false" />
+    <arg name="verbose" default="true" />
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="paused" default="$(arg paused)" />
@@ -13,11 +14,12 @@
         <arg name="gui" default="$(arg gui)" />
         <arg name="headless" default="$(arg headless)" />
         <arg name="debug" default="$(arg debug)" />
+        <arg name="verbose" value="$(arg verbose)" />
     </include>
 
     <param name="arm_description" command="cat $(find arm_description)/urdf/arm_description.urdf" />
 
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="False" output="screen" args="-urdf -param arm_description -model arm_model" />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="False" output="screen" args="-urdf -param arm_description -model arm_model -z 0.05" />
 
     <!-- Controllers -->
     <include file="$(find arm_description)/launch/controller.launch" />

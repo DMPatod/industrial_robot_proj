@@ -107,7 +107,7 @@
 			</geometry>
 		</collision>
 	</link>
-	<joint name="01_to_02" type="continuous">
+	<joint name="01_to_02" type="revolute">
 		<origin xyz="0 0.15 0" rpy="-1.7159 -9.3328E-16 3.1416" />
 		<parent link="link_01" />
 		<child link="link_02" />
