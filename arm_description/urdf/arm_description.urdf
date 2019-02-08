@@ -1,9 +1,11 @@
 <robot name="arm_model">
+	<link name="world">
+	</link>
 	<link name="base_link">
 		<inertial>
 			<origin xyz="0.0003064 0.0064691 0.00036833" rpy="0 0 0" />
-			<mass value="100.0" />
-			<inertia ixx="0.0005462" ixy="-0.0000031" ixz="0.0000000" iyy=" 0.0007163" iyz="-0.0000022" izz="0.0005442" />
+			<mass value="0.511320" />
+			<inertia ixx="0.0005462" ixy="-0.0000031" ixz="0.0000000" iyy="0.0007163" iyz="-0.0000022" izz="0.0005442" />
 		</inertial>
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
@@ -21,6 +23,10 @@
 			</geometry>
 		</collision>
 	</link>
+	<joint name="world_joint" type="fixed">
+		<parent link="world" />
+		<child link="link_00" />
+	</joint>
 	<link name="link_00">
 		<inertial>
 			<origin xyz="2.9298E-05 0.057647 0.0080497" rpy="0 0 0" />
