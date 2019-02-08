@@ -25,7 +25,7 @@
 	</link>
 	<joint name="world_joint" type="fixed">
 		<parent link="world" />
-		<child link="link_00" />
+		<child link="base_link" />
 	</joint>
 	<link name="link_00">
 		<inertial>
@@ -54,6 +54,7 @@
 		<parent link="base_link" />
 		<child link="link_00" />
 		<axis xyz="0 1 0" />
+		<limit effort="10" velocity="10">
 	</joint>
 	<link name="link_01">
 		<inertial>
@@ -77,11 +78,12 @@
 			</geometry>
 		</collision>
 	</link>
-	<joint name="00_to_01" type="continuous">
+	<joint name="00_to_01" type="revolute">
 		<origin xyz="0 0.07 0.080036" rpy="2.4677 -1.5708 0" />
 		<parent link="link_00" />
 		<child link="link_01" />
 		<axis xyz="-1 0 0" />
+		<limit lower="2" upper="3" effort="10" velocity="10">
 	</joint>
 	<link name="link_02">
 		<inertial>
@@ -110,6 +112,7 @@
 		<parent link="link_01" />
 		<child link="link_02" />
 		<axis xyz="1 0 0" />
+		<limit lower="2" upper="3" effort="10" velocity="10">
 	</joint>
 
 	<!-- ros_control plugin -->
