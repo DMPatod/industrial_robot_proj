@@ -54,7 +54,7 @@
 		<parent link="base_link" />
 		<child link="link_00" />
 		<axis xyz="0 1 0" />
-		<limit effort="10" velocity="10">
+		<limit effort="10" velocity="10" />
 	</joint>
 	<link name="link_01">
 		<inertial>
@@ -83,7 +83,7 @@
 		<parent link="link_00" />
 		<child link="link_01" />
 		<axis xyz="-1 0 0" />
-		<limit lower="2" upper="3" effort="10" velocity="10">
+		<limit lower="2" upper="3" effort="10" velocity="10" />
 	</joint>
 	<link name="link_02">
 		<inertial>
@@ -112,7 +112,7 @@
 		<parent link="link_01" />
 		<child link="link_02" />
 		<axis xyz="1 0 0" />
-		<limit lower="2" upper="3" effort="10" velocity="10">
+		<limit lower="2" upper="3" effort="10" velocity="10" />
 	</joint>
 
 	<!-- ros_control plugin -->
