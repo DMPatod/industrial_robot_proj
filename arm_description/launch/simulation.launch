@@ -17,9 +17,9 @@
         <arg name="verbose" value="$(arg verbose)" />
     </include>
 
-    <param name="arm_description" command="cat $(find arm_description)/urdf/arm_description.urdf" />
+    <param name="robot_description" command="cat $(find arm_description)/urdf/arm_description.urdf" />
 
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="False" output="screen" args="-urdf -param arm_description -model arm_model -z 0.05" />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="False" output="screen" args="-urdf -param robot_description -model arm_model -z 0.05" />
 
     <!-- Controllers -->
     <include file="$(find arm_description)/launch/controller.launch" />
