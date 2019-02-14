@@ -1,4 +1,4 @@
-<robot name="arm_model">
+<robot name="arm_model" xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<link name="world">
 	</link>
 	<link name="base_link">
@@ -112,12 +112,14 @@
 		<parent link="link_01" />
 		<child link="link_02" />
 		<axis xyz="1 0 0" />
-		<limit lower="2" upper="3" effort="10" velocity="10" />
+		<limit lower="-1" upper="0" effort="10" velocity="10" />
 	</joint>
 
 	<!-- ros_control plugin -->
 	<gazebo>
 		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<alwaysOn>true</alwaysOn>
+			<robotParam>arm_description</robotParam>
 			<robotNamespace>/arm_model</robotNamespace>
 		</plugin>
 	</gazebo>
